@@ -1,6 +1,6 @@
-package com.rahul.appmanager;
+package com.rahul.appmanager.Activity;
 
-import android.content.pm.PackageInfo;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +15,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.rahul.appmanager.BuildConfig;
+import com.rahul.appmanager.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -28,8 +31,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        intializeView();
+        initializeView();
         try {
             setTextViews();
         } catch (PackageManager.NameNotFoundException e) {
@@ -105,7 +107,7 @@ public class MainActivity extends AppCompatActivity
         return "N/A";
     }
 
-    private void intializeView() {
+    private void initializeView() {
         manuFactTV = (TextView) findViewById(R.id.manufacture_tv);
         boardTV = (TextView) findViewById(R.id.board_tv);
         modelTV = (TextView) findViewById(R.id.model_tv);
@@ -136,16 +138,12 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -165,6 +163,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_sys_app) {
             // Handle the camera action
         } else if (id == R.id.nav_user_app) {
+            startActivity(new Intent(this, UserAppActivity.class));
 
         } else if (id == R.id.nav_category) {
 

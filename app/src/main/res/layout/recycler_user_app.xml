@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:focusableInTouchMode="true"
+    android:soundEffectsEnabled="true"
+    app:cardUseCompatPadding="true"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="55dp"
+            android:adjustViewBounds="true"
+            android:layout_margin="8dp"
+            android:id="@+id/image_app"
+            android:src="@android:drawable/sym_def_app_icon"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_toEndOf="@+id/image_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/app_name"
+            android:textColor="#A8000000"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_vertical"
+            android:text="AppManager"/>
+
+        <TextView
+            android:layout_toEndOf="@+id/image_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/app_name"
+            android:singleLine="true"
+            android:id="@+id/package_name"
+            android:textColor="#60000000"
+            android:layout_gravity="center_vertical"
+            android:text="AppPackage"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/version"
+            android:textSize="11sp"
+            android:layout_margin="4dp"
+            android:maxLength="10"
+            android:layout_below="@+id/package_name"
+            android:layout_alignParentEnd="true"
+            android:gravity="bottom"
+            android:textColor="@color/colorAccent"
+            android:text="VERSION"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
