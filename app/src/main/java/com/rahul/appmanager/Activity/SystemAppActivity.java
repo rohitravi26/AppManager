@@ -4,10 +4,10 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -19,12 +19,11 @@ import com.rahul.appmanager.UserAppInfo;
 import com.rahul.appmanager.UserAppRecyclerAdapter;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class UserAppActivity extends AppCompatActivity {
+public class SystemAppActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
     PackageManager mPackageManager;
@@ -61,15 +60,6 @@ public class UserAppActivity extends AppCompatActivity {
                 mProgressBar.setVisibility(View.GONE);
             }
         }.execute();
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     private void retrieveAppInfo() {
@@ -79,7 +69,7 @@ public class UserAppActivity extends AppCompatActivity {
             userAppInfo.setPackageName(packageInfo.packageName);
             userAppInfo.setVersion(packageInfo.versionName);
             userAppInfo.setAppImage(packageInfo.applicationInfo.loadIcon(getPackageManager()));
-            if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 1)
+            if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 1)
                 appList.add(userAppInfo);
         }
     }

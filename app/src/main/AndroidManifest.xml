@@ -23,6 +23,10 @@
             android:label="@string/title_activity_user_app"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".Activity.SystemAppActivity"
+            android:label="@string/title_activity_system_app"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
