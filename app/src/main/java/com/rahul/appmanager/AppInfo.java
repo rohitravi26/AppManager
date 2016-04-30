@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 /**
  * Created by Rahul on 27 Apr 2016.
  */
-public class UserAppInfo {
+public class AppInfo {
     String appName, packageName, version;
 
     public Drawable getAppImage() {

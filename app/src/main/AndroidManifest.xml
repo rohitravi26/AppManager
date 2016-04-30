@@ -19,11 +19,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.UserAppActivity"
+            android:name=".Fragment.UserAppFragment"
             android:label="@string/title_activity_user_app"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".Activity.SystemAppActivity"
+        <activity android:name=".Fragment.SystemAppFragment"
             android:label="@string/title_activity_system_app"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
